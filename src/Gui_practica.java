@@ -17,6 +17,8 @@ public class Gui_practica extends JFrame {
 	private JPanel contentPane;
 	private JTextField textFieldEscribe;
 
+	//bts
+	
 	/**
 	 * Launch the application.
 	 */
