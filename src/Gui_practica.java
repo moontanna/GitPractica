@@ -16,6 +16,8 @@ public class Gui_practica extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField textFieldEscribe;
+	MANEJA_PALABRAS traductor = new MANEJA_PALABRAS();
+	private JLabel lbl_ingles;
 
 	//bts
 	
@@ -72,6 +74,9 @@ public class Gui_practica extends JFrame {
 		btnTraducir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
+				String palabra = textFieldEscribe.getText();
+		        String resultado = traductor.traducir(palabra);
+		        lblPalabratraducida.setText(resultado);
 				
 			}
 		});
