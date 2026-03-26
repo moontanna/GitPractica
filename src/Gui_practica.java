@@ -6,6 +6,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.Color;
 import java.awt.event.ActionListener;
@@ -18,6 +19,7 @@ public class Gui_practica extends JFrame {
 	private JTextField textFieldEscribe;
 	MANEJA_PALABRAS traductor = new MANEJA_PALABRAS();
 	private JLabel lbl_ingles;
+	private JLabel lbl_imagen;
 
 	//bts
 	
@@ -83,21 +85,39 @@ public class Gui_practica extends JFrame {
 		btnTraducir.setBackground(new Color(221, 192, 222));
 		btnTraducir.setBounds(265, 115, 144, 20);
 		contentPane.add(btnTraducir);
+		JLabel lblNewLabel = new JLabel(".");
+		lblNewLabel.setBounds(61, 140, 135, 113);
+		contentPane.add(lblNewLabel);
 		
 		JButton btnponerImagen = new JButton("Imagen relacionada");
 		btnponerImagen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				String palabra = textFieldEscribe.getText().toLowerCase();
 				
-				
+				if (palabra.equals("perro")) {
+					lblNewLabel.setIcon(new ImageIcon("src/imagenes/PERRO80.jpg"));
+		        } 
+		        else if (palabra.equals("gato")) {
+		        	lblNewLabel.setIcon(new ImageIcon("src/imagenes/GATO80.jpg"));
+		        } 
+		        else if (palabra.equals("elefante")) {
+		        	lblNewLabel.setIcon(new ImageIcon("src/imagenes/ELEFANTE80.jpg"));
+		        } 
+		        else {
+		        	lblNewLabel.setText("IMAGEN NO ENCONTRADA");
+		        }
 			}
 		});
+			
+				
+				
+				
+			
 		btnponerImagen.setBackground(new Color(221, 192, 222));
 		btnponerImagen.setBounds(265, 172, 144, 20);
 		contentPane.add(btnponerImagen);
 		
-		JLabel lblNewLabel = new JLabel(".");
-		lblNewLabel.setBounds(61, 140, 135, 113);
-		contentPane.add(lblNewLabel);
+		
 
 	}
 }
